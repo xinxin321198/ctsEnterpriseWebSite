@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type"
+	content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title>留言回复管理</title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+//留言时表单提交校验
+function checkvcode(){
+	var name = document.getElementById("userName").value;
+	if(name==""||name==null){
+		alert("部门名称不能为空");
+		return false;
+	}
+	var remark = document.getElementById("replyContent").value;
+	if(remark==null||remark==""){
+		alert("回复内容不能为空");
+		return false;
+	}
+    	return true;
+}
+</script>
+</head>
+<body background='images/allbg.gif' leftmargin='8' topmargin='8'>
+
+	<div class="bodytitle">
+		<div class="bodytitleleft"></div>
+		<div class="bodytitletxt" style="padding-left: 10px;">
+			回复列表
+		</div>
+	</div>
+	<table width="98%" border="1" cellpadding="1" cellspacing="1"
+		align="center" class="tbtitle">
+		<tr>
+			<td width="10%"  bgcolor="#F8FDE3">id</td>
+			<td><?php echo $id ?></td>
+		</tr>
+		<tr>
+			<td width="10%"  bgcolor="#F8FDE3">留言昵称</td>
+			<td><?php echo $name ?></td>
+		</tr>
+		<tr width="10%" >
+			<td  bgcolor="#F8FDE3">留言内容</td>
+			<td><?php echo $remark ?></td>
+		</tr>
+		<tr width="10%" >
+			<td  bgcolor="#F8FDE3">留言时间</td>
+			<td><?php echo $date ?></td>
+		</tr>
+		<tr width="10%" >
+			<td  bgcolor="#F8FDE3">留言IP</td>
+			<td><?php echo $ip ?></td>
+		</tr>
+	</table>
+
+	<table width="98%" border="1" cellpadding="1" cellspacing="1"
+		align="center" class="tbtitle" >
+		<tr bgcolor="#F8FDE3">
+			<td width="10%">回复部门</td>
+			<td  width="50%">回复内容</td>
+			<td  width="15%">回复时间</td>
+			<td  width="10%">操作</td>
+		</tr>
+		<?php
+		$replySql = "select  *,cts_msg_reply.id as replyid,cts_admin.uname as username from cts_msg_reply   left join cts_admin on cts_msg_reply.reply_dept=cts_admin.id where msg_id=".$id." ;";
+$db->Execute("reply",$replySql);
+	$resultReply = $db->result['reply'];
+	while($rowReply = mysql_fetch_array($resultReply)){
+			echo "<tr><td>".$rowReply['username']."</td>";
+				echo "<td>".$rowReply['reply_content']."</td>";
+				echo "<td>".$rowReply['reply_date']."</td>";	
+			echo "<td><a style='color:red' href='messageboardManage.php?doget=msgreplydel&replyid=".$rowReply['replyid']."'>删除</a></td></tr>";
+	}
+
+	?>
+	</table>
+	<form action="messageboardManage.php?doget=msgreplyadd&id=<?php echo $id;?>"  method="post" onsubmit="return checkvcode()">
+	<input type="hidden"  name="userId" value="<?php echo $userId ?>"/>
+		<table width="98%" border="1" cellpadding="1" cellspacing="1" align="center" class="tbtitle"  style="margin-top:30px;">
+			<tr ><td bgcolor="#F8FDE3" width="20%">部门：</td><td><input id="userName"  name="userName" type="text" value="<?php echo $userName ?>"  readonly="true""/></td></tr>
+			<tr><td bgcolor="#F8FDE3" width="20%">回复内容：</td><td><textarea id="replyContent" name="replyContent"  style="width:95%"></textarea></td></tr>
+			<tr><td width="50%" style="text-align:right"><input type="submit" valye="提交" /></td><td width="50%"><input type="button" value="取消" onclick="javascript:history.back() ;"/></td></tr>
+		</table>
+	</form>
+</body>
+</html>
