@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {dede:include filename="head.htm"/}
+
+
+
+<script type="text/javascript">
+var menuIndex ={dede:field.typeid/};//菜单索引
+var menu = 1
+
+    //改变flash宽度
+    $(document).ready(function(){
+        selectedMenu(menuIndex);
+    });
+    /* 
+     function submitviewproduct(){
+        //ajax请求后台账号密码验证，返回账号密码是否正确
+    	var username = $('#userName').val();
+    	var userPassWord= $('#userPassWord').val();
+    	  $.post("{dede:global.cfg_cmsurl/}/view_product_check.php",
+    			  {
+    		  userid:username,
+    		  pwd:userPassWord
+    		  },
+  			  function(data,status){
+    	    if(status=='success'){
+	    	    if(data==false){
+	    	    	$('#result').text('账号或密码错误');
+	    	    }
+	    	    else{
+	    	    	$('#result').text('登陆成功');
+	    	    	$('#productform').hide();
+	    	    }
+    	    } else{
+    	    	$('#result').text('通讯失败，请检查网络');
+    	    }
+    	  }); 
+    } */
+    
+    </script>
+
+</head>
+<body>
+{dede:include filename="top.htm"/}
+    <!--ban-->
+<div class="warp_banProduct">
+</div>
+    <!--ban End-->
+    <!--Star-->
+    <div class="content_bg">
+        <div class="content">
+            <!--Sidebar-->
+            <div class="sidebar">
+<div class="warp_subMenu">
+    <h3>
+        <b>{dede:field name='typename'/}</b></h3>
+    <ul>
+
+		
+		{dede:channel type='self' }
+      <li><a id="submenuId<%=index%>"  href='[field:typeurl/]'>[field:typename/]</a></li>
+      	{/dede:channel}
+		
+    </ul>
+
+    <script   type="text/javascript">
+        try {
+            document.getElementById("submenuId" + menu).className = "acur";
+        } catch (ex) { }
+    </script>
+
+</div>
+
+<!--left_bottom-->
+ {dede:include filename="connection.htm"/}
+<!--left_bottom end-->
+
+            </div>
+            <!--Sidebar End-->
+            <!--Right-->
+            <div class="rightSidebar">
+                <div class="warp_current">
+                    <dl>
+                        您现在的位置：{dede:field name='position'/} 
+                </div>
+                <div class="mainContent">
+                <div class="title">请输入用户账户密码进行产品查看：</div>
+                	<div class="content pure-u-1">
+		                <form id="productform" action="{dede:global.cfg_cmsurl/}/plus/list_for_product.php?tid=30" method="post" class="pure-form pure-form-aligned" >
+		                     <fieldset>
+		                     <div class="pure-control-group">
+		                         <label for="userName" class="pure-u-1-3">用户名：</label>
+		                         <input type="text" id="userid" name="userid" class="pure-u-2-3">
+		                     </div>
+		                     <div class="pure-control-group">
+		                         <label for="userPassWord" class="pure-u-1-3">密码：</label>
+		                         <input type="password" id="pwd" name="pwd" class="pure-u-2-3">
+		                     </div>
+		                     <div class="pure-controls">
+					            <button type="submit" class="pure-button pure-button-primary">查看</button>
+					        </div>
+		                     </fieldset>
+		                     <label id="result"></label>
+		                     </form>
+                     </div>
+                </div><!--mainContent-->
+            </div>
+            <!--Right End-->
+
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!--End-->
+    
+    {dede:include filename="foot.htm"/}
+    
+    </body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {dede:include filename="cn_head.htm"/}
+
+
+
+<script type="text/javascript">
+var menuIndex =5;//菜单索引
+var menu = 1
+
+
+    //改变flash宽度
+    $(document).ready(function(){
+        selectedMenu(menuIndex);
+    });
+
+
+    </script>
+
+</head>
+<body>
+{dede:include filename="cn_top.htm"/}
+    <!--ban-->
+
+    <!--ban End-->
+    <!--Star-->
+    <div class="content_bg">
+        <div class="content">
+            <!--Sidebar-->
+            <div class="sidebar">
+<div class="warp_subMenu">
+    <h3>
+        <b>{dede:field name='typename'/}</b>
+    </h3>
+    <ul>
+
+      <li><a id="submenuId<%=index%>"  href='#'>招聘信息</a></li>
+		
+    </ul>
+
+    <script   type="text/javascript">
+        try {
+            document.getElementById("submenuId" + menu).className = "acur";
+        } catch (ex) { }
+
+        //验证表单的提交
+        function checkForm(){
+            var postText = $("#post").val();
+            var nameText = $("#name").val();
+            var phoneText = $("#phone").val();
+            var emailText = $("#email").val();
+            var remarkText = $("#remark").val();
+            if(""==postText||null==postText)
+            {
+                alert("请填写需要应聘的岗位");
+                return false;
+            }
+            if(""==nameText||null==nameText)
+            {
+                alert("请填写您的姓名");
+                return false;
+            }
+            if(""==phoneText||null==phoneText)
+            {
+                alert("请填写您的联系电话");
+                return false;
+            }
+            if(""==emailText||null==emailText)
+            {
+                alert("请填写您的联系邮箱");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</div>
+
+<!--left_bottom-->
+ {dede:include filename="cn_connection.htm"/}
+<!--left_bottom end-->
+
+            </div>
+            <!--Sidebar End-->
+            <!--Right-->
+            <div class="rightSidebar">
+                <div class="warp_current">
+                    <dl>
+                        您现在的位置：应聘信息填写
+                </div>
+                <div class="mainContent">
+                	<div class="title">应聘信息填写</div>
+                	<div class="content pure-u-1">
+                		<form class="pure-form pure-form-aligned"  action="/plus/diy.php" enctype="multipart/form-data" method="post" onsubmit="return checkForm()">
+                            <input type="hidden" name="dede_fields" value="post,text;name,text;sex,radio;age,select;phone,text;email,text;remark,multitext;annex,addon">
+                            <input type="hidden" name="dede_fieldshash" value="0a7b7d6d0fa489e005cc4b862df42479">
+					        <input type="hidden" name="action" value="post">
+					        <input type="hidden" name="diyid" value="1">
+					        <input type="hidden" name="do" value="2">
+					    <fieldset>
+					    
+					    <div class="pure-control-group">
+					            <label for="post" class="pure-u-1-3">应聘岗位</label>
+					            <input id="post"  name="post"  type="text" placeholder="应聘岗位" class="pure-u-2-3">
+					        </div>
+					        
+					        <div class="pure-control-group">
+					            <label for="name" class="pure-u-1-3">姓名</label>
+					            <input id="name" name="name"  type="text" placeholder="姓名" class="pure-u-2-3">
+					        </div>
+					        
+					        <div class="pure-control-group">
+					        	<label for="option-two" class="pure-u-1-3">性别</label>
+					        	
+					            <label for="option-two" class="pure-radio pure-u-1-3" > <input
+									id="option-two" type="radio" name="sex"
+									value="男" checked>男
+								</label> 
+								<label for="option-three" class="pure-radio pure-u-1-3">
+									<input id="option-three" type="radio" name="sex"
+									value="女">女
+								</label>
+					        </div>
+
+								<div class="pure-control-group ">
+									<label for="age"  class="pure-u-1-3">年龄</label> 
+									<select id="age" class="pure-u-2-3"  name="age">
+										<option value='17'>17</option>
+										<option value='18'>18</option>
+										<option value='19'>19</option>
+										<option value='20'>20</option>
+										<option value='21'>21</option>
+										<option value='22'>22</option>
+										<option value='23'>23</option>
+										<option value='24'>24</option>
+										<option value='25'>25</option>
+										<option value='26'>26</option>
+										<option value='27'>27</option>
+										<option value='28'>28</option>
+										<option value='29'>29</option>
+										<option value='30'>30</option>
+										<option value='31'>31</option>
+										<option value='32'>32</option>
+										<option value='33'>33</option>
+										<option value='34'>34</option>
+										<option value='35'>35</option>
+										<option value='36'>36</option>
+										<option value='37'>37</option>
+										<option value='38'>38</option>
+										<option value='39'>39</option>
+										<option value='40'>40</option>
+										<option value='41'>41</option>
+										<option value='42'>42</option>
+										<option value='43'>43</option>
+										<option value='44'>44</option>
+										<option value='45'>45</option>
+										<option value='46'>46</option>
+										<option value='47'>47</option>
+										<option value='48'>48</option>
+										<option value='49'>49</option>
+										<option value='50'>50</option>
+										<option value='51'>51</option>
+										<option value='52'>52</option>
+										<option value='53'>53</option>
+										<option value='54'>54</option>
+										<option value='55'>55</option>
+										<option value='56'>56</option>
+										<option value='57'>57</option>
+										<option value='58'>58</option>
+										<option value='59'>59</option>
+										<option value='60'>60</option>
+										<option value='61'>61</option>
+										<option value='62'>62</option>
+										<option value='63'>63</option>
+										<option value='64'>64</option>
+										<option value='65'>65</option>
+									</select>
+								</div>
+
+								<div class="pure-control-group">
+					            <label for="phone" class="pure-u-1-3">联系电话</label>
+					            <input id="phone"  name="phone" type="text" placeholder="联系电话" class="pure-u-2-3">
+					        	</div>
+					        
+								<div class="pure-control-group">
+					            <label for="email" class="pure-u-1-3">电子邮箱</label>
+					            <input id="email"  name="email" type="email" placeholder="电子邮箱" class="pure-u-2-3">
+					        	</div>
+					
+					       <div class="pure-control-group">
+					       		<label for="remark" class="pure-u-1-3">备注</label>
+						        <textarea  id="remark" name="remark" class="pure-u-2-3" placeholder="备注信息"></textarea>
+						    </div>
+                            <div class="pure-control-group">
+                                <label for="annex" class="pure-u-1-3">附件</label>
+                                <input type="file" name="annex" id="annex"  class="pure-u-2-3" placeholder="附件上传">
+                            </div>
+					        <div class="pure-controls">
+					            <button type="submit" class="pure-button pure-button-primary">提交信息</button>
+					        </div>
+					    </fieldset>
+					</form>
+
+					</div>
+				</div><!--mainContent-->
+            </div>
+            <!--Right End-->
+
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!--End-->
+    
+    {dede:include filename="cn_foot.htm"/}
+    
+    </body>
+</html>

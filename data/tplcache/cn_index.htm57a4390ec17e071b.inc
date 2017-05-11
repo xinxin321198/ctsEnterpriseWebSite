@@ -1,0 +1,46 @@
+<?php
+$z[0]=Array("include","",75,113);
+$z[0][4]['filename']="cn_head.htm";
+$z[1]=Array("global","",132,164);
+$z[1][4]['name']="cfg_templets_skin";
+$z[2]=Array("include","",1943,1980);
+$z[2][4]['filename']="cn_top.htm";
+$z[3]=Array("global","",2014,2046);
+$z[3][4]['name']="cfg_templets_skin";
+$z[4]=Array("global","",2141,2173);
+$z[4][4]['name']="cfg_templets_skin";
+$z[5]=Array("global","",2448,2480);
+$z[5][4]['name']="cfg_templets_skin";
+$z[6]=Array("channel","<a\r\n                    href=\"javascript:void(0);\" id=\"home_news[field:id/]\" onmouseover=\"setTab('home_news',[field:id/])\">[field:typename/]</a>",2603,2798);
+$z[6][4]['type']="son";
+$z[6][4]['typeid']="3";
+$z[7]=Array("channelartlist","\r\n                    <div id=\"con_home_news_{dede:field name='id'/}\" style=\"display: none;\"><h5>{dede:arclist row=1\r\n                        orderby=pubdate type='image.' imgwidth='128' imgheight='300'}<a href=\"[field:arcurl/]\"\r\n                                                                                        target=_blank>[field:image/]</a>{/dede:arclist}\r\n                    </h5>\r\n                        <ol>{dede:arclist titlelen='60' row='5'}\r\n                            <li><span>[field:pubdate function=\"MyDate('m-d',@me)\"/]</span><a href=\"[field:arcurl /]\">[field:title/]</a>{/dede:arclist}\r\n                        </ol>\r\n                        <div class=\"con_home_news_line\"></div>\r\n                    </div>\r\n                    ",2859,3670);
+$z[7][4]['typeid']="3";
+$z[8]=Array("global","",3861,3893);
+$z[8][4]['name']="cfg_templets_skin";
+$z[9]=Array("global","",4181,4207);
+$z[9][4]['name']="cfg_cmspath";
+$z[10]=Array("global","",4414,4446);
+$z[10][4]['name']="cfg_templets_skin";
+$z[11]=Array("global","",4641,4667);
+$z[11][4]['name']="cfg_cmspath";
+$z[12]=Array("global","",5340,5372);
+$z[12][4]['name']="cfg_templets_skin";
+$z[13]=Array("global","",5457,5483);
+$z[13][4]['name']="cfg_cmspath";
+$z[14]=Array("global","",5734,5766);
+$z[14][4]['name']="cfg_templets_skin";
+$z[15]=Array("global","",5851,5877);
+$z[15][4]['name']="cfg_cmspath";
+$z[16]=Array("global","",6102,6134);
+$z[16][4]['name']="cfg_templets_skin";
+$z[17]=Array("global","",6219,6245);
+$z[17][4]['name']="cfg_cmspath";
+$z[18]=Array("arclist","\r\n                    <li><a href=\"[field:arcurl/]\">[field:title/]</a></li>\r\n                        ",6458,6623);
+$z[18][4]['typeid']="26";
+$z[18][4]['row']="5";
+$z[18][4]['titlelen']="60";
+$z[19]=Array("include","",7170,7208);
+$z[19][4]['filename']="cn_foot.htm";
+
+?>

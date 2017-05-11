@@ -1,0 +1,48 @@
+<?php
+$z[0]=Array("global","",236,264);
+$z[0][4]['name']="cfg_soft_lang";
+$z[1]=Array("field","",277,296);
+$z[1][4]['name']="title";
+$z[2]=Array("global","",297,323);
+$z[2][4]['name']="cfg_webname";
+$z[3]=Array("field","",364,393);
+$z[3][4]['name']="keywords";
+$z[4]=Array("field","",433,491);
+$z[4][4]['name']="description";
+$z[4][4]['function']="html2text(@me)";
+$z[5]=Array("global","",509,541);
+$z[5][4]['name']="cfg_templets_skin";
+$z[6]=Array("include","",646,681);
+$z[6][4]['filename']="head.htm";
+$z[7]=Array("arclist","\r\nlinkarr[[field:global.autoindex/]] = \"[field:arcurl/]\";\r\npicarr[[field:global.autoindex/]]  = \"[field:litpic/]\";\r\ntextarr[[field:global.autoindex/]] = \"[field:title function='html2text(@me)'/]\";\r\n",1015,1259);
+$z[7][4]['flag']="f";
+$z[7][4]['row']="5";
+$z[8]=Array("global","",1845,1877);
+$z[8][4]['name']="cfg_templets_skin";
+$z[9]=Array("global","",2173,2205);
+$z[9][4]['name']="cfg_templets_skin";
+$z[10]=Array("arclist","\r\n                        <h2><a href=\"[field:arcurl/]\">[field:title/]</a></h2>\r\n                        <p>[field:description function='cn_substr(@me,110)'/]...<a href=\"[field:arcurl/]\">[查看全文]</a></p>\r\n                        ",2725,3010);
+$z[10][4]['flag']="c";
+$z[10][4]['limit']="0,1";
+$z[11]=Array("arclist","\r\n                        <li><a href=\"[field:arcurl/]\">[field:title/]</a></li>\r\n                        ",3093,3248);
+$z[11][4]['flag']="c";
+$z[11][4]['limit']="1,4";
+$z[12]=Array("channelartlist","\r\n      <dl class=\"tbox\">\r\n        <dt><strong><a href=\"{dede:field name='typeurl'/}\">{dede:field name='typename'/}</a></strong><span class=\"more\"><a href=\"{dede:field name='typeurl'/}\">更多...</a></span></dt>\r\n        <dd>\r\n          <ul class=\"e6\">\r\n          {dede:arclist row='3' type='image.'}\r\n           <li><a href=\"[field:arcurl/]\" title=\"[field:title function='html2text(@me)' /]\"><img src=\"[field:litpic/]\" alt=\"[field:title function='html2text(@me)'/]\"/></a></li>\r\n		{/dede:arclist}\r\n          </ul>\r\n          <ul class=\"d2 ico3\">\r\n          {dede:arclist titlelen='60' row='5'}\r\n            <li><span class=\"date\">[field:pubdate function=\"GetDateMK(@me)\"/]</span><a href=\"[field:arcurl /]\">[field:title /]</a></li>\r\n			{/dede:arclist}\r\n          </ul>\r\n        </dd>\r\n      </dl>\r\n	",3343,4184);
+$z[13]=Array("channel","\r\n		<li><a href='[field:typeurl/]'>[field:typename/]</a></li>",4438,4617);
+$z[13][4]['type']="son";
+$z[13][4]['currentstyle']="<li><a href='~typelink~' class='thisclass'>~typename~</a></li>";
+$z[14]=Array("arclist","\r\n						<li>\r\n							<a href=\"[field:arcurl/]\" class=\"preview\"><img src=\"[field:litpic/]\" alt=\"[field:title function='html2text(@me)'/]\"/></a>\r\n							<a href=\"[field:arcurl/]\" class=\"title\">[field:title/]</a>\r\n							<span class=\"intro\">更新:[field:pubdate function=\"GetDateMK(@me)\"/]</span>\r\n						</li>\r\n                     ",4818,5213);
+$z[14][4]['row']="5";
+$z[14][4]['type']="image.";
+$z[14][4]['orderby']="click";
+$z[15]=Array("myad","",5314,5345);
+$z[15][4]['name']="listRtPicAD";
+$z[16]=Array("arclist","\r\n						<li><a href=\"[field:arcurl/]\"><img src=\"[field:litpic/]\" alt=\"[field:title function='html2text(@me)'/]\"/><span class=\"title\">[field:title/]</span></a></li>\r\n                    ",5492,5736);
+$z[16][4]['row']="8";
+$z[16][4]['type']="image.commend.";
+$z[17]=Array("myad","",5877,5910);
+$z[17][4]['name']="innerfooterAD";
+$z[18]=Array("include","",5918,5955);
+$z[18][4]['filename']="footer.htm";
+
+?>

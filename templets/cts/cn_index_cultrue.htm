@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {dede:include filename="cn_head.htm"/}
+
+
+
+<script type="text/javascript">
+var menuIndex =4;//菜单索引
+var subMenuIndex = {dede:field name='id'/};//子栏目索引
+
+
+
+    //改变flash宽度
+    $(document).ready(function(){
+        selectedMenu(menuIndex);
+        selectedSubMenu(subMenuIndex);
+
+    });
+    </script>
+
+</head>
+<body>
+{dede:include filename="cn_top.htm"/}
+    <!--ban-->
+    <div class="warp_ban">
+        <div class="warp_banCultrue">
+        </div>
+    </div>
+    <!--ban End-->
+    <!--Star-->
+    <div class="content_bg">
+        <div class="content">
+            <!--Sidebar-->
+            <div class="sidebar">
+<div class="warp_subMenu">
+    <h3>
+        <b>{dede:field name='typename'/}</b>
+    </h3>
+    <ul>
+
+		
+		{dede:channel type='son' }
+      <li><a id="submenuId[field:id/]"  href='[field:typeurl/]'>[field:typename/]</a></li>
+      	{/dede:channel}
+		
+    </ul>
+
+    <script   type="text/javascript">
+        try {
+            document.getElementById("submenuId" + menu).className = "acur";
+        } catch (ex) { }
+    </script>
+
+</div>
+
+<!--left_bottom-->
+ {dede:include filename="cn_connection.htm"/}
+<!--left_bottom end-->
+
+            </div>
+            <!--Sidebar End-->
+            <!--Right-->
+            <div class="rightSidebar">
+                <div class="warp_current">
+                    <dl>
+                        您现在的位置：{dede:field name='position'/} 
+                </div>
+                <div class="mainContent">
+					{dede:field.content/}
+				</div><!--mainContent-->
+            </div>
+            <!--Right End-->
+
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!--End-->
+    
+    {dede:include filename="cn_foot.htm"/}
+    
+    </body>
+</html>

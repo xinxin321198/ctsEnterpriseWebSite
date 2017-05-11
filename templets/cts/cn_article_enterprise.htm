@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {dede:include filename="cn_head.htm"/}
+
+
+
+<script type="text/javascript">
+var menuIndex =1;//菜单索引
+var subMenuIndex = {dede:field name='id'/};//子栏目索引
+
+    //改变flash宽度
+    $(document).ready(function(){
+        selectedMenu(menuIndex);
+        selectedSubMenu(subMenuIndex);
+
+    });
+    </script>
+
+</head>
+<body>
+{dede:include filename="cn_top.htm"/}
+    <!--ban-->
+    <div class="warp_banEnterprise">
+    </div>
+    <!--ban End-->
+    <!--Star-->
+    <div class="content_bg">
+        <div class="content">
+            <!--Sidebar-->
+            <div class="sidebar">
+<div class="warp_subMenu">
+    <h3>
+        <b>{dede:field name='typename'/}</b>
+    </h3>
+    <ul>
+
+		
+		{dede:channel type='son' }
+      <li><a id="submenuId[field:id/]"  href='[field:typeurl/]'>[field:typename/]</a></li>
+      	{/dede:channel}
+		
+    </ul>
+
+    <script   type="text/javascript">
+        try {
+        } catch (ex) { }
+    </script>
+
+</div>
+
+<!--left_bottom-->
+ {dede:include filename="cn_connection.htm"/}
+<!--left_bottom end-->
+
+            </div>
+            <!--Sidebar End-->
+            <!--Right-->
+            <div class="rightSidebar">
+                <div class="warp_current">
+                    <dl>
+                        您现在的位置：{dede:field name='position'/} 
+                </div>
+                <div class="mainContent">
+                    <div class="title">{dede:field.title/}</div>
+                    <div class="info">
+                        <small>时间:{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</small>
+                        <small>来源:{dede:field.source/} </small>
+                        <small>作者:{dede:field.writer/}</small>
+                        <small>点击:
+                            <script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}"
+                                    type='text/javascript'></script>
+                            次
+                        </small>
+                    </div>
+                    <div class="articleConent">
+                        {dede:field.body/}
+                    </div>
+                    <div class="pagelist">
+                        <ul>
+                            <li>{dede:prenext get='pre'/}</li>
+                            <li>{dede:prenext get='next'/}</li>
+                        </ul>
+                    </div>
+                </div><!--mainContent-->
+            </div>
+            <!--Right End-->
+
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!--End-->
+    
+    {dede:include filename="cn_foot.htm"/}
+    
+    </body>
+</html>

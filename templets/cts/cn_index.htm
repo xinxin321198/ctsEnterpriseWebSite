@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html xmlns=http://www.w3.org/1999/xhtml>
+<head>
+    {dede:include filename="cn_head.htm"/}
+    <script src="{dede:global.cfg_templets_skin/}/js/ScrollPic.js"></script>
+    <script>
+    var menuIndex = 0;
+
+    $(document).ready(function () {
+        onChangeWidth(".home_ban");
+        initYunCai();
+        //onChangeWidth(".home_main");
+        $(window).resize(function () {
+            onChangeWidth(".home_ban");
+            winWidth = getwinWidth();
+           // onChangeWidth(".home_main");
+        });
+        selectedMenu(menuIndex);
+        setTab("home_news", 20);
+        setTab("homeQy", 1);
+
+        function initYunCai()
+        {
+            var winWidth = getwinWidth();
+            if(winWidth<=1347)
+            {
+                winWidth = 1347;
+            }
+            /*白云飘start*/
+            var b = new ScrollPic();
+            b.scrollContId = "yuncaidiv";//内容容器ID
+            b.arrLeftId = "LeftArr1";//左箭头ID
+            b.arrRightId = "RightArr1";//右箭头ID
+            b.frameWidth = winWidth;//显示框宽度
+            b.pageWidth = winWidth;//翻页宽度
+            b.speed = 100;//移动速度(单位毫秒，越小越快)
+            b.space = 1;//每次移动像素(单位px，越大越快)
+            b.autoPlay = true;//自动播放
+            b.autoPlayTime = 0.01;//自动播放间隔时间(秒)
+            b.initialize()//初始化
+            /*白云飘end*/
+        }
+
+        /*底部轮播图start*/
+        var a = new ScrollPic();
+        a.scrollContId = "ISL_Cont_1";
+        a.arrLeftId = "LeftArr1";
+        a.arrRightId = "RightArr1";
+        a.frameWidth = 1300;
+        a.pageWidth = 1300;
+        a.speed = 10;
+        a.space = 60;
+        a.autoPlay = false;
+        a.autoPlayTime = 4;
+        a.initialize();
+        /*底部轮播图end*/
+
+    });</script>
+</head>
+<body>
+{dede:include filename="cn_top.htm"/}
+
+<div class=home_ban><img src="{dede:global.cfg_templets_skin/}/images/index.jpg" width="100%" height="100%">
+
+    <div id=yuncaidiv class=yuncai><img src="{dede:global.cfg_templets_skin/}/images/yuncai.png" width="100%"
+                                        height="100%"></div>
+</div>
+
+<div class=content_bg>
+    <div class=home_main>
+        <div class=icon_prev><a href="javascript:void(0);" name=LeftArr1 id=LeftArr1></a></div>
+        <script src="{dede:global.cfg_templets_skin/}/js/Tab.js"></script>
+        <div class=cont id=ISL_Cont_1>
+            <div id=home_news class=home_news><h3 class=tab>{dede:channel type='son' typeid='3'}<a
+                    href="javascript:void(0);" id="home_news[field:id/]" onmouseover="setTab('home_news',[field:id/])">[field:typename/]</a>{/dede:channel}
+            </h3>
+
+                <div id=con_home_news>{dede:channelartlist typeid = '3'}
+                    <div id="con_home_news_{dede:field name='id'/}" style="display: none;"><h5>{dede:arclist row=1
+                        orderby=pubdate type='image.' imgwidth='128' imgheight='300'}<a href="[field:arcurl/]"
+                                                                                        target=_blank>[field:image/]</a>{/dede:arclist}
+                    </h5>
+                        <ol>{dede:arclist titlelen='60' row='5'}
+                            <li><span>[field:pubdate function="MyDate('m-d',@me)"/]</span><a href="[field:arcurl /]">[field:title/]</a>{/dede:arclist}
+                        </ol>
+                        <div class="con_home_news_line"></div>
+                    </div>
+                    {/dede:channelartlist}
+                </div>
+            </div>
+            <div class=home_product><h3 class=home_title><b>我们的产品</b></h3>
+
+                <div class=txt><h5 class=photo><img src="{dede:global.cfg_templets_skin/}/images/CTS0201.png"
+                                                    width=200px></h5>
+
+                    <p>以技术为核心，以品质赢市场，以服务树形象，致力于服务中国卷烟市场，推动我国卷烟工业的...<a
+                            href="{dede:global.cfg_cmspath/}/plus/list.php?tid=30">[详细]</a></p></div>
+            </div>
+            <div class=home_about><h3 class=home_title><b>公司概况</b></h3>
+
+                <div class=txt><h5 class=photo><img src="{dede:global.cfg_templets_skin/}/images/index.jpg" width=250px></h5>
+
+                    <p>中烟施伟策（云南）再造烟叶有限公司（简称：CTS）是由中国烟草总...<a
+                            href=" {dede:global.cfg_cmspath/}/plus/list.php?tid=7">[详细]</a></p></div>
+            </div>
+            <div id=homeQy class=home_qiye><h3 class=tab><a href="javascript:void(0);" id=homeQy1
+                                                            onmouseover="setTab('homeQy',1)">安全理念</a><a
+                    href="javascript:void(0);" id=homeQy2 onmouseover="setTab('homeQy',2)">技术优势</a><a
+                    href="javascript:void(0);" id=homeQy3 onmouseover="setTab('homeQy',3)">技术服务</a></h3>
+
+                <div id=con_homeQy>
+                    <div id=con_homeQy_1><h1 class=more><a href=" /qygl/441.html"></a></h1>
+                        <h5><img src="{dede:global.cfg_templets_skin/}/images/aqln.jpg"></h5>
+                        <div class=txt>安全理念<a href="{dede:global.cfg_cmspath/}/plus/list.php?tid=16">[详细]</a></div>
+                    </div>
+                    <div id=con_homeQy_2 style="display: none;"><h1 class=more><a href=" /qygl/442.html"></a></h1>
+                        <h5>
+                        <img src="{dede:global.cfg_templets_skin/}/images/jsys.jpg"></h5>
+                        <div class=txt>技术优势<a href="{dede:global.cfg_cmspath/}/plus/list.php?tid=17">[详细]</a></div>
+                    </div>
+                    <div id=con_homeQy_3 style="display: none;"><h1 class=more><a href=" /qygl/443.html"></a></h1><h5>
+                        <img src="{dede:global.cfg_templets_skin/}/images/jsfw.jpg"></h5>
+                        <div class=txt>技术服务<a href="{dede:global.cfg_cmspath/}/plus/list.php?tid=18">[详细]</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class=home_hexie><h3 class=home_title><b>CTS故事</b></h3>
+                <ul>{dede:arclist typeid='26' row='5' titlelen='60' }
+                    <li><a href="[field:arcurl/]">[field:title/]</a></li>
+                        {/dede:arclist}
+                </ul>
+            </div>
+            <div class=home_contact><h3 class=home_title><b>联系我们</b></h3>
+
+                <div class=txt>电话：0877-6997872<br>网址：www.cts-yn.com<br>传真：0877-6997908<br>地址：中国云南省玉溪市大营街常里蔡官屯89号<br>
+                </div>
+            </div>
+            <div class="home_blank">
+            </div>
+        </div>
+        <div class=icon_next><a href="javascript:void(0);" name=RightArr1 id=RightArr1></a></div>
+    </div>
+</div>
+
+
+{dede:include filename="cn_foot.htm"/}

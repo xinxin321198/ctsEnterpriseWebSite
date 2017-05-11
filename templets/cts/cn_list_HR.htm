@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {dede:include filename="cn_head.htm"/}
+
+
+
+<script type="text/javascript">
+var menuIndex =5;//菜单索引
+var subMenuIndex = {dede:field name='id'/};//子栏目索引
+
+
+    //改变flash宽度
+    $(document).ready(function(){
+        selectedMenu(menuIndex);
+        selectedSubMenu(subMenuIndex);
+
+    });
+    </script>
+
+</head>
+<body>
+{dede:include filename="cn_top.htm"/}
+    <!--ban-->
+<div class="warp_banHR">
+</div>
+    <!--ban End-->
+    <!--Star-->
+    <div class="content_bg">
+        <div class="content">
+            <!--Sidebar-->
+            <div class="sidebar">
+<div class="warp_subMenu">
+    <h3>
+        <b>{dede:field name='typename'/}</b>
+    </h3>
+    <ul>
+
+		
+		{dede:channel type='self' }
+      <li><a id="submenuId[field:id/]"  href='[field:typeurl/]'>[field:typename/]</a></li>
+      	{/dede:channel}
+		
+    </ul>
+
+    <script   type="text/javascript">
+        try {
+            document.getElementById("submenuId" + menu).className = "acur";
+        } catch (ex) { }
+    </script>
+
+</div>
+
+<!--left_bottom-->
+ {dede:include filename="cn_connection.htm"/}
+<!--left_bottom end-->
+
+            </div>
+            <!--Sidebar End-->
+            <!--Right-->
+            <div class="rightSidebar">
+                <div class="warp_current">
+                    <dl>
+                        您现在的位置：{dede:field name='position'/} 
+                </div>
+                <div class="mainContent">
+					<ul class="warp_newsList">
+    {dede:list pagesize='9'}
+
+   							<li>
+                            【[field:typelink/]】
+                            <a href="[field:arcurl/]">[field:title/]</a>
+                            <span>[[field:pubdate function="GetDateTimeMK(@me)"/]]</span>
+                            <span>点击：[field:click/] 次</span>
+                            </li>
+    {/dede:list}
+
+					</ul>
+					<ul class="pagelist">
+					{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="9"/}
+					</ul>	
+                </div><!--mainContent-->
+            </div>
+            <!--Right End-->
+
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!--End-->
+    
+    {dede:include filename="cn_foot.htm"/}
+    
+    </body>
+</html>

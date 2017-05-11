@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+.msg_list{
+    overflow: hidden;
+}
+    .msg_ul{
+    }
+        .msg_ul_li{
+            margin-bottom: 30px;
+        }
+
+
+    .msg_visitor{
+        color: #F9AB42;
+        font-weight: bold;
+        font-size: 14px;
+        border-top: 3px solid #007CC3;
+        margin-top: 30px;
+    }
+
+    .msg_content{
+        text-indent: 24px;
+        font-size: 16px;
+    }
+    .msg_date{
+        text-align: right;
+    }
+    .msg_support_oppose{
+        text-align: right;
+    }
+    .msg_reply_ul{
+
+    }
+        .msg_reply_ul li{
+        }
+        .msg_reply_ul em{
+            color: #14B04B;
+        }
+        .msg_reply_ul i{
+            float: right;
+        }
+
+        
+.msg_page{
+    overflow: hidden;
+	
+}
+	.msg_page_ul{
+    float: right;
+	
+	}
+	.msg_page_ul li{
+		float:left;
+	
+		margin-left: 20px;
+}
+.msg_form{
+    overflow: hidden;
+}

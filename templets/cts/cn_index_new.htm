@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {dede:include filename="cn_head.htm"/}
+
+<!--本页css-->
+    <link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/css/new_index.css"/>
+
+<!--轮播图插件-->
+<script src="{dede:global.cfg_templets_skin/}/js/jquery.KinSlideshow-1.2.1.min.js"></script>
+
+
+<script type="text/javascript">
+var menuIndex =3;//菜单索引
+var menu = 1
+
+    //改变flash宽度
+    $(document).ready(function(){
+        selectedMenu(menuIndex);
+
+    });
+
+$(function(){
+    $("#KinSlideshow").KinSlideshow({
+        moveStyle:"down", 		//设置切换方向为向下 [默认向左切换]
+        intervalTime:8,   		//设置间隔时间为8秒  [默认为5秒]
+        mouseEvent:"mouseover",		//设置鼠标事件为“鼠标滑过切换”  [默认鼠标点击时切换]
+        titleFont:{TitleFont_size:14,TitleFont_color:"#FFFFFF"} //设置标题文字大小为14px，颜色：#FF0000
+    });
+})
+    </script>
+
+</head>
+<body>
+
+{dede:include filename="cn_top.htm"/}
+    <!--ban-->
+
+    <!--ban End-->
+    <!--Star-->
+    <div class="content_bg">
+        <div class="content">
+            <div class="new_head">
+                <!--<div class="new_title">新闻专题</div>-->
+                <div class="new_position">您现在的位置：{dede:field name='position'/} </div>
+            </div>
+            <div class="new_index">
+                <div class="new_left">
+                    <div class="new_left_1">
+                        <div class="new_sub_title">
+                            {dede:autochannel partsort='1' typeid='3'}
+                            <a href='[field:typelink/]'>[field:typename/]</a>
+                            {/dede:autochannel}
+                        </div>
+                        <div id="KinSlideshow" style="visibility:hidden;float: left">
+                            {dede:arclist row=5 orderby=pubdate type='image.' imgwidth='540' imgheight='350' typeid='20'}
+                            <a href="[field:arcurl/]" target="_blank">[field:image/]</a>
+                            {/dede:arclist}
+                        </div>
+                        <ul class="new_left_1_ul">
+                            {dede:arclist titlelen='90' row='10' typeid='20'}
+                            <li><span>[field:pubdate function="MyDate('m-d',@me)"/]</span><a href="[field:arcurl /]">[field:title /]</a></li>
+                            {/dede:arclist}
+                        </ul>
+                    </div>
+                    <div class="new_left_2">
+                        <div class="new_sub_title">
+                        {dede:autochannel partsort='3' typeid='3'}
+                        <a href='[field:typelink/]'>[field:typename/]</a>
+                        {/dede:autochannel}
+                        </div>
+                        <div class="new_left_2_head">
+                            {dede:arclist flag='h' limit='0,1' typeid='22' imgwidth='440'imgheight='250' titlelen = '100'}
+                            [field:image/]
+                            <p class="new_left_2_head_title"><a href="[field:arcurl/]">[field:title/]</a></p>
+                            <p> [field:description function='cn_substr(@me,110)'/]...<a href="[field:arcurl/]">[查看全文]</a></p>
+                            {/dede:arclist}
+                        </div>
+                            <ul class="new_left_2_ul">
+                                {dede:arclist titlelen='120' row='10' typeid='22'}
+                                <li><span>[field:pubdate function="MyDate('m-d',@me)"/]</span><a href="[field:arcurl /]">[field:title /]</a></li>
+                                {/dede:arclist}
+                            </ul>
+                    </div>
+                    <div class="new_left_3">
+                        <div class="new_sub_title">
+                            {dede:autochannel partsort='5' typeid='3'}
+                            <a href='[field:typelink/]'>[field:typename/]</a>
+                            {/dede:autochannel}
+                        </div>
+                        <div>
+                            <ul class="new_left_3_ul">
+                                {dede:arclist titlelen='120' row='10' typeid='24'}
+                                <li><span>[field:pubdate function="MyDate('m-d',@me)"/]</span><a href="[field:arcurl /]">[field:title /]</a></li>
+                                {/dede:arclist}
+
+
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="clear">
+                    </div>
+                </div>
+
+                <div class="new_right">
+                    <div class="new_right_1">
+                        <div class="new_sub_title">
+                            {dede:autochannel partsort='2' typeid='3'}
+                            <a href='[field:typelink/]'>[field:typename/]</a>
+                            {/dede:autochannel}
+                         </div>
+                        <div>
+                            <ul class="new_right_1_ul">
+                                {dede:arclist titlelen='120' row='10' typeid='21'}
+                                <li><span>[field:pubdate function="MyDate('m-d',@me)"/]<a href="[field:arcurl /]">[field:title /]</a></span></li>
+                                {/dede:arclist}
+
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="new_right_2">
+                        <div class="new_sub_title">
+                            {dede:autochannel partsort='4' typeid='3'}
+                            <a href='[field:typelink/]'>[field:typename/]</a>
+                            {/dede:autochannel}
+                        </div>
+                        <div>
+                            <ul class="new_right_2_ul">
+                                {dede:arclist titlelen='120' row='20' typeid='23'}
+                                <li><span>[field:pubdate function="MyDate('m-d',@me)"/]<a href="[field:arcurl /]">[field:title /]</a></span></li>
+                                {/dede:arclist}
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End-->
+
+    {dede:include filename="cn_foot.htm"/}
+    
+    </body>
+</html>

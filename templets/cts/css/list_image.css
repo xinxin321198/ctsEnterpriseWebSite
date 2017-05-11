@@ -1,0 +1,77 @@
+.list_image{
+    /*border: 1px solid #0063CE;*/
+    overflow: hidden;
+}
+.list_image ul{
+    /*border: 1px solid #3dce54;*/
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.list_image li{
+    border: 1px solid #cec2c5;
+    display: inline-block;
+    width: 250px;
+    height: 150px;
+    margin-left: 14px;
+    padding: 10px 10px;
+}
+
+.list_image a{
+    line-height: 150px;
+}
+.list_image img{
+    display: block;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.list_image img:hover{
+    box-shadow: 10px 10px 10px #4C3D3D;
+}
+
+
+
+.list_friendship_link{
+    /*border: 1px solid #0063CE;*/
+    overflow: hidden;
+}
+.list_friendship_link ul{
+    /*border: 1px solid #3dce54;*/
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.list_friendship_link li{
+    border: 1px solid #cec2c5;
+    /* display: inline-block; */
+    float: left;
+    width: 290px;
+    height: 50px;
+    margin-left: 7px;
+    margin-bottom: 20px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.list_friendship_link a{
+    /* line-height: 150px; */
+}
+
+.list_friendship_link p{
+    text-align: center;
+}
+.list_friendship_link img{
+    display: block;
+	border-radius: 10px;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+.list_friendship_link img:hover{
+    box-shadow: 10px 10px 10px #4C3D3D;
+}

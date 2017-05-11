@@ -1,0 +1,51 @@
+<!--top-->
+
+<div class="top">
+    <div class="layer">
+        <div class="logo">
+        </div>
+    </div>
+    <!--layer_end-->
+    <div class="search">
+
+        <form name="formsearch" action="/plus/search.php">
+            <input type="hidden" name="kwtype" value="0">
+            <label>Search</label>
+            <input id="search-keyword" name="q" type="text" class="text" value="In Search..."
+                   onfocus="if(this.value=='在这里搜索...'){this.value='';}"
+                   onblur="if(this.value==''){this.value='在这里搜索...';}">
+            <select name="searchtype" id="search-option">
+                <option value="title" selected="1">Title retriving</option>
+                <option value="titlekeyword">Smart blur</option>
+            </select>
+            <input name="" type="submit" value="search"/>
+        </form>
+        <div>This site contains tobacco content, minors declined to visit!</div>
+    </div>
+    <!--search_end-->
+
+    <div class="select">
+        <select name="" style="width: 102px; height: 19px;"
+                onchange="location.href=this.options[this.selectedIndex].value">
+			<option value="/plus/list.php?tid=35">English</option>
+            <option value="/plus/list.php?tid=34">中文版</option>
+        </select>
+    </div>
+    <!--select_end-->
+    <div class="mainnav">
+        <ul>
+            <li id="li_item0"><a id="navId0" href="{dede:global.cfg_cmsurl/}/plus/list.php?tid=35"><em> Home</em></a>
+            </li>
+            {dede:channel type='son' row='10' typeid='35'}
+            <li id="li_item[field:id/]">
+                <a id="navId[field:id/]" href='[field:typeurl/]' [field:rel/]><em>[field:typename/]</em></a>
+            </li>
+            {/dede:channel}
+        </ul>
+    </div>
+    <!--mainav_end-->
+</div>
+<!--top End-->
+
+<!--logo线-->
+<div class="logo_line" style="width: 0px"></div>

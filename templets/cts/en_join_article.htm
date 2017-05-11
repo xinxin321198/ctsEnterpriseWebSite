@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {dede:include filename="en_head.htm"/}
+
+
+
+<script type="text/javascript">
+var menuIndex =60;//菜单索引
+var menu = 1
+
+
+    //改变flash宽度
+    $(document).ready(function(){
+        selectedMenu(menuIndex);
+    });
+    </script>
+
+</head>
+<body>
+{dede:include filename="en_top.htm"/}
+    <!--ban-->
+
+    <!--ban End-->
+    <!--Star-->
+    <div class="content_bg">
+        <div class="content">
+            <!--Sidebar-->
+            <div class="sidebar">
+<div class="warp_subMenu">
+    <h3>
+        <b>{dede:field name='typename'/}</b></h3>
+    <ul>
+
+		
+		{dede:channel typeid='60' }
+      <li><a id="submenuId<%=index%>"  href='[field:typeurl/]'>[field:typename/]</a></li>
+      	{/dede:channel}
+		
+    </ul>
+
+    <script   type="text/javascript">
+        try {
+            document.getElementById("submenuId" + menu).className = "acur";
+        } catch (ex) { }
+    </script>
+
+</div>
+
+<!--left_bottom-->
+ {dede:include filename="en_connection.htm"/}
+<!--left_bottom end-->
+
+            </div>
+            <!--Sidebar End-->
+            <!--Right-->
+            <div class="rightSidebar">
+                <div class="warp_current">
+                    <dl>
+                        Position：{dede:field name='position'/}
+                </div>
+                <div class="mainContent">
+                	<div class="title">{dede:field.title/}</div>
+					  <div class="info">
+					  <small>Time:{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</small><small>Source:{dede:field.source/}</small> <small>Author:{dede:field.writer/} </small><small>点击:
+						  <script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' ></script>
+	   						次	</small>				
+                		</div>
+                		<div class="conent">
+                		      {dede:field.body/}
+                		 </div>
+                		  <div class="joinbutton">
+						   		<a class="pure-button pure-button-primary"  href="{dede:global.cfg_basehost/}/a/en/en_join.html">Click on the apply for jobs</a>
+						   </div>
+                		 <div  class="pagelist">
+                		    <ul>
+						       <li>{dede:prenext get='pre'/}</li>
+     							<li>{dede:prenext get='next'/}</li>
+						   </ul>
+						   </div>
+                </div><!--mainContent-->
+            </div>
+            <!--Right End-->
+
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!--End-->
+    
+    {dede:include filename="en_foot.htm"/}
+    
+    </body>
+</html>

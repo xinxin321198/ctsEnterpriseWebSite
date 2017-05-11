@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {dede:include filename="cn_head.htm"/}
+    <link rel="stylesheet"
+          href="{dede:global.cfg_templets_skin/}/css/list_image.css">
+
+
+<script type="text/javascript">
+var menuIndex =6;//菜单索引
+var subMenuIndex = {dede:field name='id'/};//子栏目索引
+    //改变flash宽度
+    $(document).ready(function(){
+        selectedMenu(menuIndex);
+        selectedSubMenu(subMenuIndex);
+    });
+    </script>
+
+</head>
+<body>
+{dede:include filename="cn_top.htm"/}
+    <!--ban-->
+    <div class="warp_banEnterprise">
+    </div>
+    <!--ban End-->
+    <!--Star-->
+    <div class="content_bg">
+        <div class="content">
+            <!--Sidebar-->
+            <div class="sidebar">
+<div class="warp_subMenu">
+    <h3>
+        <b>{dede:field name='typename'/}</b>
+    </h3>
+    <ul>
+
+		
+		{dede:channel type='son' }
+      <li><a id="submenuId[field:id/]"  href='[field:typeurl/]'>[field:typename/]</a></li>
+      	{/dede:channel}
+		
+    </ul>
+
+    <script   type="text/javascript">
+        try {
+
+        } catch (ex) { }
+    </script>
+
+</div>
+
+<!--left_bottom-->
+ {dede:include filename="cn_connection.htm"/}
+<!--left_bottom end-->
+
+            </div>
+            <!--Sidebar End-->
+            <!--Right-->
+            <div class="rightSidebar">
+                <div class="warp_current">
+                    <dl>
+                        您现在的位置：{dede:field name='position'/} 
+                </div>
+                <div class="mainContent">
+                    <div class="list_friendship_link">
+                        <ul>
+                                <li>
+                                    <a href="http://www.swmintl.com" target="_tank">
+                                    施伟策-摩迪(中国)有限公司
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.tobacco.gov.cn/html/35/3532.html" target="_tank">
+                                    中国双维投资有限公司
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.ynzy-tobacco.com" target="_tank">
+                                    云南中烟工业有限责任公司
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.hongta.com/cn" target="_tank">
+                                    红塔烟草(集团)有限责任公司
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="http://www.hyhhgroup.com" target="_tank">
+                                    红云红河烟草(集团)有限责任公司
+                                    </a>
+                                </li>
+                        </ul>
+                    </div>
+                </div><!--mainContent-->
+            </div>
+            <!--Right End-->
+
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!--End-->
+    
+    {dede:include filename="cn_foot.htm"/}
+    
+    </body>
+</html>
