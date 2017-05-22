@@ -8,7 +8,7 @@
 - 后台管理员账号admin 密码：admin
 
 ![示例](./images/1.png)
-![示例](./images/2png)
+![示例](./images/2.png)
 ![示例](./images/3.png)
 ![示例](./images/4.png)
 ![示例](./images/5.png)
