@@ -6,3 +6,19 @@
 - 数据库备份在db目录下，导入mysql中
 - 项目的数据库访问配置文件在data/common.inc.php中
 - 后台管理员账号admin 密码：admin
+
+![示例](./images/1.png)
+![示例](./images/2png)
+![示例](./images/3.png)
+![示例](./images/4.png)
+![示例](./images/5.png)
+![示例](./images/6.png)
+![示例](./images/7.png)
+![示例](./images/8.png)
+
+* 昵称：loserStar<br/>
+* email:xinxin321198@gmail.com<br/>
+* email2:362527240@qq.com<br/>
+* qq:362527240<br/>
+* github:https://github.com/xinxin321198<br/>
+* 简书主页:http://www.jianshu.com/u/37816485e7e9<br/>
