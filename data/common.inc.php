@@ -3,7 +3,7 @@
 $cfg_dbhost = 'localhost';
 $cfg_dbname = 'swc1506dba';
 $cfg_dbuser = 'root';
-$cfg_dbpwd = '123456';
+$cfg_dbpwd = 'root';
 $cfg_dbprefix = 'cts_';
 $cfg_db_language = 'utf8';
 

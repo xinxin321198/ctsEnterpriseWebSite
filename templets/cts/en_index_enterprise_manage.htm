@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    {dede:include filename="cn_head.htm"/}
+    {dede:include filename="en_head.htm"/}
 
 
 
 <script type="text/javascript">
-var menuIndex =3;//用于确认此页面属于哪个菜单，该菜单才会显示选中样式
+var menuIndex =85;//用于确认此页面属于哪个菜单，该菜单才会显示选中样式
 var subMenuIndex = {dede:field name='id'/};//子栏目索引
 
 
@@ -21,9 +22,10 @@ var subMenuIndex = {dede:field name='id'/};//子栏目索引
 
 </head>
 <body>
-{dede:include filename="cn_top.htm"/}
+{dede:include filename="en_top.htm"/}
     <!--ban-->
-<div class="warp_banNews">
+<!--ban-->
+<div class="warp_banHR">
 </div>
     <!--ban End-->
     <!--Star-->
@@ -44,16 +46,11 @@ var subMenuIndex = {dede:field name='id'/};//子栏目索引
 		
     </ul>
 
-    <script   type="text/javascript">
-        try {
-            document.getElementById("submenuId" + menu).className = "acur";
-        } catch (ex) { }
-    </script>
 
 </div>
 
 <!--left_bottom-->
- {dede:include filename="cn_connection.htm"/}
+ {dede:include filename="en_connection.htm"/}
 <!--left_bottom end-->
 
             </div>
@@ -65,22 +62,8 @@ var subMenuIndex = {dede:field name='id'/};//子栏目索引
                         您现在的位置：{dede:field name='position'/} 
                 </div>
                 <div class="mainContent">
-					<ul class="warp_newsList">
-    {dede:list pagesize='9'}
-
-   							<li>
-                            【[field:typelink/]】
-                            <a href="[field:arcurl/]">[field:title/]</a>
-                            <span>[[field:pubdate function="GetDateTimeMK(@me)"/]]</span>
-                            <span>点击：[field:click/] 次</span>
-                            </li>
-    {/dede:list}
-
-					</ul>
-					<ul class="pagelist">
-					{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="9"/}
-					</ul>	
-                </div><!--mainContent-->
+					{dede:field.content/}
+				</div><!--mainContent-->
             </div>
             <!--Right End-->
 
@@ -90,7 +73,7 @@ var subMenuIndex = {dede:field name='id'/};//子栏目索引
     </div>
     <!--End-->
     
-    {dede:include filename="cn_foot.htm"/}
+    {dede:include filename="en_foot.htm"/}
     
     </body>
 </html>
