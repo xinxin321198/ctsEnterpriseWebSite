@@ -1,0 +1,92 @@
+<!--企业文化-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {dede:include filename="en_head.htm"/}
+
+<script type="text/javascript">
+var menuIndex =64;//用于确认此页面属于哪个菜单，该菜单才会显示选中样式
+var menu = 1
+
+
+    //改变flash宽度
+    $(document).ready(function(){
+        selectedMenu(menuIndex);
+    });
+    </script>
+
+</head>
+<body>
+{dede:include filename="en_top.htm"/}
+    <!--ban-->
+<div class="warp_banCultrue">
+</div>
+    <!--ban End-->
+    <!--Star-->
+    <div class="content_bg">
+        <div class="content">
+            <!--Sidebar-->
+            <div class="sidebar">
+<div class="warp_subMenu">
+    <h3>
+        <b>{dede:field name='typename'/}</b>
+    </h3>
+    <ul>
+
+		
+		{dede:channel type='son' }
+      <li><a id="submenuId<%=index%>"  href='[field:typeurl/]'>[field:typename/]</a></li>
+      	{/dede:channel}
+		
+    </ul>
+
+    <script  type="text/javascript">
+        try {
+            document.getElementById("submenuId" + menu).className = "acur";
+        } catch (ex) { }
+    </script>
+
+</div>
+
+<!--left_bottom-->
+ {dede:include filename="en_connection.htm"/}
+<!--left_bottom end-->
+
+            </div>
+            <!--Sidebar End-->
+            <!--Right-->
+            <div class="rightSidebar">
+                <div class="warp_current">
+                    <dl>
+                        您现在的位置：{dede:field name='position'/} 
+                </div>
+                <div class="mainContent">
+                	<div class="title">{dede:field.title/}</div>
+					  <div class="info">
+					  <small>时间:{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}</small><small>来源:{dede:field.source/} </small><small>作者:{dede:field.writer/}</small> <small>点击:
+					  <script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript'  ></script>
+   						次</small>
+                		</div>
+                		<div class="articleConent">
+                		      {dede:field.body/}
+                		 </div>
+                		 <div  class="pagelist">
+                		    <ul>
+						       <li>{dede:prenext get='pre'/}</li>
+     							<li>{dede:prenext get='next'/}</li>
+						   </ul>
+						   </div>
+                </div><!--mainContent-->
+            </div>
+            <!--Right End-->
+
+            <div class="clear">
+            </div>
+        </div>
+    </div>
+    <!--End-->
+    
+    {dede:include filename="en_foot.htm"/}
+    
+    </body>
+</html>
